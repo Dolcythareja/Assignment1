@@ -18,3 +18,33 @@ document.getElementById("butonLocation").addEventListener("click", () => updateW
 document.getElementById("generateButon").addEventListener("click", buildSentence);
 document.getElementById("resetButon").addEventListener("click", resetAll);
 document.getElementById("randomButon").addEventListener("click", randomSentence);
+// Update the word for the selected category
+function updateWord(butonNumber) {
+    switch (butonNumber) {
+        case 1:
+            document.getElementById("butonSubject").textContent = subjectList[subjectIndex++];
+            subjectPressed = true;
+            if (subjectIndex === subjectList.length) subjectIndex = 0;
+            break;
+        case 2:
+            document.getElementById("butonAction").textContent = actionList[actionIndex++];
+            actionPressed = true;
+            if (actionIndex === actionList.length) actionIndex = 0;
+            break;
+        case 3:
+            document.getElementById("butonDescriptor").textContent = descriptorList[descriptorIndex++];
+            descriptorPressed = true;
+            if (descriptorIndex === descriptorList.length) descriptorIndex = 0;
+            break;
+        case 4:
+            document.getElementById("butonObject").textContent = objectList[objectIndex++];
+            objectPressed = true;
+            if (objectIndex === objectList.length) objectIndex = 0;
+            break;
+        case 5:
+            document.getElementById("butonLocation").textContent = locationList[locationIndex++];
+            locationPressed = true;
+            if (locationIndex === locationList.length) locationIndex = 0;
+            break;
+    }
+}
