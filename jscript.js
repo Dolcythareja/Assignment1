@@ -80,3 +80,16 @@ function resetAll() {
     subjectIndex = actionIndex = descriptorIndex = objectIndex = locationIndex = 0;
     subjectPressed = actionPressed = descriptorPressed = objectPressed = locationPressed = false;
 }
+// Generate and display a random sentence
+function randomSentence() {
+    const randomSentence = [
+        subjectList[Math.floor(Math.random() * subjectList.length)],
+        actionList[Math.floor(Math.random() * actionList.length)],
+        descriptorList[Math.floor(Math.random() * descriptorList.length)],
+        objectList[Math.floor(Math.random() * objectList.length)],
+        locationList[Math.floor(Math.random() * locationList.length)]
+    ].join(" ") + "."; 
+
+    document.getElementById("storyBox").textContent = randomSentence;
+}
+
