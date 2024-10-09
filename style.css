@@ -72,3 +72,28 @@ h1 {
     word-wrap: break-word;
     width: 100%; /* Full width */
 }
+.action-btn {
+    background-color: #b3df13; /* Action button color */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s; /* Transition effects */
+    width: 100%; /* Full width */
+    max-width: 250px; /* Max width */
+}
+
+.action-btn:hover {
+    background-color: #692bb0; /* Hover effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn + .action-btn {
+    margin-top: 10px; /* Space between buttons */
+}
+
+.main-box .action-btn {
+    margin-top: 20px; /* Space above action buttons */
+}
