@@ -48,3 +48,35 @@ function updateWord(butonNumber) {
             break;
     }
 }
+// display the final sentence
+function buildSentence() {
+    
+    if (!subjectPressed || !actionPressed || !descriptorPressed || !objectPressed || !locationPressed) {
+        alert("Please select all words.");
+        return;
+    }
+
+    // Create the sentence from selected words
+    const sentence = [
+        document.getElementById("butonSubject").textContent,
+        document.getElementById("butonAction").textContent,
+        document.getElementById("butonDescriptor").textContent,
+        document.getElementById("butonObject").textContent,
+        document.getElementById("butonLocation").textContent
+    ].join(" ") + "."; // Join words into a sentence
+
+    document.getElementById("storyBox").textContent = sentence; 
+}
+
+// Reset all selections and clear the displayed sentence
+function resetAll() {
+    document.getElementById("butonSubject").textContent = "Subject";
+    document.getElementById("butonAction").textContent = "Action";
+    document.getElementById("butonDescriptor").textContent = "Descriptor";
+    document.getElementById("butonObject").textContent = "Object";
+    document.getElementById("butonLocation").textContent = "Location";
+    document.getElementById("storyBox").textContent = ""; 
+    // Reset indices and pressed flags
+    subjectIndex = actionIndex = descriptorIndex = objectIndex = locationIndex = 0;
+    subjectPressed = actionPressed = descriptorPressed = objectPressed = locationPressed = false;
+}
